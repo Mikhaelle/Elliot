@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TwitterLogin from 'react-twitter-auth';
-
+import { TwitterTimelineEmbed} from 'react-twitter-embed';
+import { Timeline } from 'react-twitter-widgets';
 class App extends Component {
 
   constructor() {
@@ -29,6 +30,7 @@ class App extends Component {
   render() {
     let content = !!this.state.isAuthenticated ?
       (
+
         <div>
           <p>Authenticated</p>
           <div>
@@ -49,6 +51,10 @@ class App extends Component {
 
     return (
       <div className="App">
+        <Timeline 
+          dataSource = {{sourceType:"profile", screenName: "reactjs"}}
+          options={{username:"reactjs", height : "600"}}
+/>
         {content}
       </div>
     );

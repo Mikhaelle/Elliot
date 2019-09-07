@@ -16,7 +16,7 @@ module.exports = function () {
     twitterProvider: {
       type: {
         id: String,
-        token: String
+        token: String,
       },
       select: false
     }
